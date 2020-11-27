@@ -1,0 +1,34 @@
+# See: http://code.google.com/p/arduino/wiki/Platforms
+
+menu.cpu=Processor
+
+##############################################################
+
+atmega16u2.name=ATmega16u2
+
+atmega16u2.upload.tool=avrdude
+atmega16u2.upload.protocol=avr109
+atmega16u2.upload.maximum_size=16384
+atmega16u2.upload.maximum_data_size=512
+atmega16u2.upload.speed=19200
+
+atmega16u2.bootloader.tool=avrdude
+atmega16u2.bootloader.low_fuses=0xdf
+atmega16u2.bootloader.high_fuses=0xd9
+atmega16u2.bootloader.extended_fuses=0xf4
+atmega16u2.bootloader.file=caterina/Caterina-Leonardo.hex
+atmega16u2.bootloader.unlock_bits=0x3F
+atmega16u2.bootloader.lock_bits=0x2F
+
+
+atmega16u2.build.mcu=atmega16u2
+atmega16u2.build.f_cpu=16000000L
+atmega16u2.build.vid=0x2341
+atmega16u2.build.pid=0x8036
+atmega16u2.build.usb_product="ATmega16u2 Device"
+atmega16u2.build.board=AVR_ATMEGA16U2
+atmega16u2.build.core=cores/arduino-mega16u2
+atmega16u2.build.variant=mega16u2
+atmega16u2.build.extra_flags={build.usb_flags}
+
+##############################################################
