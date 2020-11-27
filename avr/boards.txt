@@ -27,7 +27,7 @@ atmega16u2.build.vid=0x2341
 atmega16u2.build.pid=0x8036
 atmega16u2.build.usb_product="ATmega16u2 Device"
 atmega16u2.build.board=AVR_ATMEGA16U2
-atmega16u2.build.core=cores/arduino-mega16u2
+atmega16u2.build.core=atmega16u2
 atmega16u2.build.variant=mega16u2
 atmega16u2.build.extra_flags={build.usb_flags}
 
