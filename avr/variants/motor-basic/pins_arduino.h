@@ -3,6 +3,7 @@
   Part of Arduino - http://www.arduino.cc/
 
   Copyright (c) 2007 David A. Mellis
+				2020 Feliks Montez
 
   This library is free software; you can redistribute it and/or
   modify it under the terms of the GNU Lesser General Public
@@ -127,7 +128,7 @@ extern const uint8_t PROGMEM analog_pin_to_channel_PGM[];
 // for the analog output (software PWM).  Analog input
 // pins are a separate set.
 
-// ATMEL ATMEGA32U4 / ARDUINO LEONARDO
+// ATMEL ATMEGA16U2 / CYBERSTORM MOTOR BRICK BASIC
 //
 // D0				PD2					RXD1/INT2
 // D1				PD3					TXD1/INT3
