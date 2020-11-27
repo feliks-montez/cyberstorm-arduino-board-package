@@ -91,6 +91,12 @@
 #define NUM_DIGITAL_PINS  24
 #define NUM_ANALOG_INPUTS 0
 
+#define TX_RX_LED_INIT	DDRD |= (1<<5), DDRB |= (1<<0)
+#define TXLED0			PORTD |= (1<<5)
+#define TXLED1			PORTD &= ~(1<<5)
+#define RXLED0			PORTB |= (1<<0)
+#define RXLED1			PORTB &= ~(1<<0)
+
 // Map SPI port to 'new' pins D14..D17
 #define PIN_SPI_SS    (14)
 #define PIN_SPI_MOSI  (16)
@@ -113,7 +119,7 @@ extern const uint8_t PROGMEM analog_pin_to_channel_PGM[];
 
 #define digitalPinHasPWM(p)         ((p) == 3 || (p) == 5 || (p) == 7 || (p) == 11)
 
-#define digitalPinToInterrupt(p) ((p) == 0 ? 2 : ((p) == 1 ? 3 : ((p) == 2 ? 1 : ((p) == 3 ? 0 : ((p) == 7 ? 4 : NOT_AN_INTERRUPT)))))
+#define digitalPinToInterrupt(p) ((p) == 0 ? 2 : ((p) == 1 ? 3 : ((p) == 2 ? 1 : ((p) == 3 ? 0 : ((p) == 4 ? 5 : ((p) == 6 ? 7 : ((p) == 12 ? 6 : ((p) == 13 ? 4 : NOT_AN_INTERRUPT))))))))
 
 #ifdef ARDUINO_MAIN
 
@@ -130,7 +136,7 @@ extern const uint8_t PROGMEM analog_pin_to_channel_PGM[];
 // D4		A6		PD4					INT5/AIN3
 // D5#				PC6		???			OC1A/PCINT8
 // D6		A7		PD7					CTS/HWB/AIN6/T0/INT7
-// D7#				PC5		PMM8		PCINT9/OC1B
+// D7#				PC5		PWM8		PCINT9/OC1B
 //
 // D8		A8		PB4					T1/PCINT4
 // D9		A9		PB5					PCINT5
